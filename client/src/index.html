@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie tester</title>
+
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <!-- Compressed JavaScript -->
+  <script defer src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+	<script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+  <form id="form">
+    <div class="grid-container">
+			<div class="grid-x">
+				<div class="cell large-4">
+
+					<div class="grid-x grid-padding-x">
+						<h1>Cookie Tester</h1>
+						<div class="medium-6 cell">
+							<label>URL
+								<input id="URL" type="text" placeholder="URL" required value="http://127.0.0.1:1234/getCookie">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Key
+								<input id="key" type="text" placeholder="key" required value="mycookie">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Value
+								<input id="value" type="text" placeholder="value" required value="42">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Expires
+								<input id="expires" type="datetime-local" placeholder="Date">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Max-Age
+								<input id="maxAge" type="number" placeholder="초단위 지정">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Domain
+								<input id="domain" type="text" placeholder="example.com">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Path
+								<input id="path" type="text" placeholder="/main">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>Secure
+								<input id="secure" type="checkbox">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<label>HttpOnly
+								<input id="httpOnly" type="checkbox">
+							</label>
+						</div>
+					</div>
+					<div class="grid-x grid-padding-x">
+						<div class="medium-6 cell">
+							<fieldset class="large-7 cell">
+								<legend>Check these out</legend>
+								<label>SameSite=Lax|Strict</label>
+								<input name="sameSite" value="lax" type="radio" checked>
+								<label for="lax">lax</label>
+								<input name="sameSite" value="strict" type="radio">
+								<label for="strict">strict</label>
+								<input name="sameSite" value="none" type="radio">
+								<label for="none">none</label>
+							</fieldset>
+						</div>
+					</div>
+					<button class="button" type="submit">
+						send
+					</button>
+				</div>
+				<div class="cell large-4">
+					<h1>Response</h1>
+					<div class="response">
+
+					</div>
+				</div>
+				<div class="cell large-4">
+					<h1>Cookies</h1>
+					<div class="cookieList">
+
+					</div>
+				</div>
+			</div>
+
+    </div>
+	</form>
+	<script type="module" src="./cookieTester.js"></script>
+	<script type="module" src="./util.js"></script>
+</body>
+
+</html>
