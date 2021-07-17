@@ -7,10 +7,13 @@ const app = express();
 app.use(cookieParser())
 app.use(express.json())
 app.use(cors({
-	origin: ['http://127.0.0.1:5500', 'http://localhost:5500'],
+	origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://checkintest.42cadet.kr'],
 	credentials: true
 }))
 
+app.get('/', (req, res) => {
+	res.status(200).json({ status: true });
+})
 
 app.post('/getCookie', (req, res) => {
 	console.log(req.query)
